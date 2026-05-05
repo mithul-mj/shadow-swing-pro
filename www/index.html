@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Shadow Swing Pro</title>
-    <link rel="manifest" href="manifest.json">
+    <title>Shadow Swing</title>
     <link rel="stylesheet" href="style.css">
-    <script src="phaser.min.js"></script>
+    <meta name="description"
+        content="A high-speed, momentum-based swing runner where skill comes from timing and angles.">
+
+    <!-- PWA / Play Store -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#050508">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png">
 </head>
+
 <body>
-    <div id="game-container"></div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="ad-layer"></div>
+    <canvas id="fgCanvas"></canvas>
+    <div id="ui-overlay">
+        <div id="score">0m</div>
+        <div id="instructions">Tap to Swing</div>
+        <div id="game-over" style="display: none;">
+            <h1>CRASHED</h1>
+            <p id="final-score">Distance: 0m</p>
+            <button id="restart-btn">Try Again</button>
+        </div>
+        <div id="controls-hint">
+            <span class="mobile-hint">
+                <span>1. Touch &amp; Hold</span> to Swing
+                &nbsp;&nbsp;&rarr;&nbsp;&nbsp;
+                <span>Swipe &uarr;&darr;</span> to Climb
+                &nbsp;&nbsp;&rarr;&nbsp;&nbsp;
+                <span>2. Release</span> to Jump
+            </span>
+        </div>
+    </div>
     <script src="game.js"></script>
 </body>
+
 </html>
